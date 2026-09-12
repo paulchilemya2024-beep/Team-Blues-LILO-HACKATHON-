@@ -118,7 +118,7 @@ sequenceDiagram
 
 ## 3. Curriculum & Pattern Tracks
 
-CodeGuide includes **54 curated interview problems** indexed in `rag.json`, organized into 7 structured pattern tracks with 0 orphaned questions:
+CodeGuide includes **100+ curated interview problems** indexed in `rag.json`, organized into 7 structured pattern tracks with 0 orphaned questions:
 
 | Track ID | Track Name | Invariant Focus | Count | Key Problems |
 | :--- | :--- | :--- | :---: | :--- |

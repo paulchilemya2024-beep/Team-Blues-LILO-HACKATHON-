@@ -6,9 +6,6 @@
 !/README.md
 !/rag.json
 
-# Ignore legacy prototype
-index.html
-
 !/package.json
 !/package-lock.json
 !/tsconfig.json
@@ -31,7 +28,6 @@ index.html
 !/public/
 !/public/**
 
-# Dependencies & build outputs
 .next/
 node_modules/
 .env*.local
