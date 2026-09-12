@@ -11,7 +11,7 @@
 
 ## 1. Overview & Philosophy
 
-**CodeGuide** breaks candidates out of the rote memorization trap. Instead of dumping complete solutions or unformatted chatbot walls, CodeGuide guides engineers to discover algorithmic patterns inductively through progressive Socratic hints, mathematical invariant proofs, and runtime complexity bounds.
+**CodeGuide** breaks candidates out of the rote memorization trap. Instead of dumping complete solutions or unformatted chatbot walls of text, CodeGuide guides engineers to discover algorithmic patterns inductively through progressive Socratic hints, proofs of mathematical invariants, and runtime complexity bounds.
 
 ### Core Pillars
 - **Socratic Discovery over Answer Spoiling:** Five structured learning stages (Understand, Think, Approach, Complexity, Tradeoffs) with progressive hint unlocks.
@@ -21,7 +21,7 @@
 
 ---
 
-## 2. System Architecture & Stack Diagram (G-Stack)
+## 2. System Architecture & Stack Diagram
 
 CodeGuide is architected across four high-cohesion layers: Presentation, Application Routing & State, Retrieval & Intelligence (Google Gen AI), and Data & Persistence.
 
