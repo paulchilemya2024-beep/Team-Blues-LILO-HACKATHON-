@@ -34,7 +34,7 @@ export async function POST(request: Request) {
       : `You are a Socratic technical interview tutor. Analyze the user's problem using the relevant local examples below. Return ONLY valid JSON matching this exact shape, with no markdown fences or preamble:\n${WALKTHROUGH_SCHEMA}\n\nRules: provide exactly 3 progressive hints without giving away the solution, keep fields concise, include 2 alternatives, and write TypeScript code. Ground the explanation in the user's actual problem; use local examples only as supporting retrieval context.\n\nRelevant local examples:\n${knowledgeContext}\n\nUser problem:\n${prompt}`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-3.6-flash",
       contents: input,
     });
 
