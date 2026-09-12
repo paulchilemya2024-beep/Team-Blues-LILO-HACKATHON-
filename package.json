@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node scripts/verify-acceptance.mjs"
+    "test": "node scripts/verify-acceptance.mjs",
+    "keg": "node scripts/keg.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.22.0",
