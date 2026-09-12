@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-canvas: #12151c;
+  --bg-panel: #191e28;
+  --bg-panel-hover: #222936;
+  --bg-panel-active: #2b3342;
+  --border-subtle: #2a303c;
+  --border-strong: #3b4455;
+  --paper-bg: #f6f3ec;
+  --paper-border: #e2ddce;
+  --ink-primary: #201f1a;
+  --ink-secondary: #55524a;
+  --ink-muted: #7c776c;
+  --text-primary: #f3f1eb;
+  --text-secondary: #a3abbb;
+  --text-muted: #6e7687;
+  --amber-brand: #e3a448;
+  --amber-dim: #2f2516;
+  --teal-accent: #59a89c;
+  --teal-dim: #182a27;
+  --plum-accent: #a673a8;
+  --plum-dim: #281d2a;
+  --red-accent: #e06c75;
+  --red-dim: #2b171a;
+}
+
+html {
+  background-color: #12151c;
+}
+
+body {
+  background-color: #12151c;
+  color: #f3f1eb;
+  font-family: 'Source Sans 3', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #e3a448;
+  color: #12151c;
+}
+
+.paper-texture {
+  background-color: #f6f3ec;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 27px,
+    #e2ddce 28px
+  );
+}
+
+.terminal-line::before {
+  content: '$ ';
+  color: #e3a448;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #12151c;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #2a303c;
+  border-radius: 2px;
+}

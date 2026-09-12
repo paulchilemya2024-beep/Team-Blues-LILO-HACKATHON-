@@ -348,5 +348,195 @@
     "difficulty": "Medium",
     "prompt": "Given a string, rearrange its characters so that no two adjacent characters are the same, or determine that it's not possible.",
     "keywords": ["greedy", "heap", "string", "rearrangement"]
+  },
+  {
+    "id": "contains_duplicate",
+    "title": "Contains Duplicate",
+    "companies": ["Google", "Amazon", "Apple"],
+    "topic": "Arrays & Hashing",
+    "pattern": "Hash Set",
+    "difficulty": "Easy",
+    "prompt": "Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.",
+    "keywords": ["array", "hash set", "duplicates", "lookup"]
+  },
+  {
+    "id": "longest_consecutive_subsequence",
+    "title": "Longest Consecutive Sequence",
+    "companies": ["Google", "Meta", "Microsoft"],
+    "topic": "Arrays & Hashing",
+    "pattern": "Hash Set Intelligent Lookup",
+    "difficulty": "Medium",
+    "prompt": "Given an unsorted array of integers nums, return the length of the longest consecutive elements sequence in O(n) time without sorting.",
+    "keywords": ["array", "hash set", "consecutive sequence", "linear time"]
+  },
+  {
+    "id": "valid_sudoku",
+    "title": "Valid Sudoku",
+    "companies": ["Uber", "Amazon", "Apple"],
+    "topic": "Arrays & Hashing",
+    "pattern": "Hash Set Grid Validation",
+    "difficulty": "Medium",
+    "prompt": "Determine if a 9 x 9 Sudoku board is valid by verifying each row, column, and 3 x 3 sub-box contains no duplicates without solving it.",
+    "keywords": ["matrix", "hash set", "grid", "validation"]
+  },
+  {
+    "id": "valid_palindrome",
+    "title": "Valid Palindrome",
+    "companies": ["Meta", "Microsoft", "Spotify"],
+    "topic": "Strings",
+    "pattern": "Two Pointers",
+    "difficulty": "Easy",
+    "prompt": "A phrase is a palindrome if, after converting all uppercase letters into lowercase and removing non-alphanumeric characters, it reads the same forward and backward.",
+    "keywords": ["string", "two pointers", "palindrome", "alphanumeric"]
+  },
+  {
+    "id": "three_sum",
+    "title": "3Sum",
+    "companies": ["Meta", "Amazon", "Google", "Apple"],
+    "topic": "Arrays",
+    "pattern": "Sort + Two Pointers",
+    "difficulty": "Medium",
+    "prompt": "Given an integer array nums, return all triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0 without duplicate triplets.",
+    "keywords": ["array", "two pointers", "sorting", "triplets"]
+  },
+  {
+    "id": "container_with_most_water",
+    "title": "Container With Most Water",
+    "companies": ["Google", "Amazon", "Adobe"],
+    "topic": "Arrays",
+    "pattern": "Greedy Two Pointers",
+    "difficulty": "Medium",
+    "prompt": "Given an array of integers representing heights, find two lines that together with the x-axis form a container that stores the most water.",
+    "keywords": ["array", "two pointers", "greedy", "geometry"]
+  },
+  {
+    "id": "insert_interval",
+    "title": "Insert Interval",
+    "companies": ["Google", "Meta", "LinkedIn"],
+    "topic": "Intervals",
+    "pattern": "Sort + Sweep",
+    "difficulty": "Medium",
+    "prompt": "Given an array of non-overlapping intervals sorted by start time and a new interval, insert the new interval and merge if necessary so intervals remain sorted and non-overlapping.",
+    "keywords": ["intervals", "merging", "binary search", "sweep"]
+  },
+  {
+    "id": "merge_k_sorted_lists",
+    "title": "Merge k Sorted Lists",
+    "companies": ["Amazon", "Google", "Meta", "Microsoft"],
+    "topic": "Linked Lists",
+    "pattern": "Min-Heap / Divide and Conquer",
+    "difficulty": "Hard",
+    "prompt": "Given an array of k linked lists, each sorted in ascending order, merge all the linked lists into one sorted linked list and return it.",
+    "keywords": ["heap", "linked list", "divide and conquer", "priority queue"]
+  },
+  {
+    "id": "invert_binary_tree",
+    "title": "Invert Binary Tree",
+    "companies": ["Google", "Amazon", "Apple"],
+    "topic": "Trees",
+    "pattern": "Tree Traversal / DFS",
+    "difficulty": "Easy",
+    "prompt": "Given the root of a binary tree, invert the tree by swapping the left and right children of every node, and return its root.",
+    "keywords": ["tree", "recursion", "dfs", "bfs"]
+  },
+  {
+    "id": "lowest_common_ancestor",
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "companies": ["Amazon", "Meta", "Microsoft"],
+    "topic": "Trees",
+    "pattern": "Post-order DFS",
+    "difficulty": "Medium",
+    "prompt": "Given a binary tree, find the lowest common ancestor (LCA) node of two designated nodes p and q.",
+    "keywords": ["tree", "lca", "recursion", "dfs"]
+  },
+  {
+    "id": "binary_tree_max_path_sum",
+    "title": "Binary Tree Maximum Path Sum",
+    "companies": ["Meta", "Google", "Amazon"],
+    "topic": "Trees",
+    "pattern": "Post-order Dynamic Programming",
+    "difficulty": "Hard",
+    "prompt": "A path in a binary tree is any non-empty sequence of nodes connected by edges. Return the maximum path sum of any valid path.",
+    "keywords": ["tree", "dfs", "recursion", "dynamic programming"]
+  },
+  {
+    "id": "search_rotated_sorted_array",
+    "title": "Search in Rotated Sorted Array",
+    "companies": ["Google", "Microsoft", "Amazon"],
+    "topic": "Binary Search",
+    "pattern": "Modified Binary Search",
+    "difficulty": "Medium",
+    "prompt": "Given an integer array nums sorted in ascending order with distinct values, rotated at an unknown pivot index, find the index of target in O(log n) time.",
+    "keywords": ["binary search", "array", "rotation", "logarithmic"]
+  },
+  {
+    "id": "pacific_atlantic_water_flow",
+    "title": "Pacific Atlantic Water Flow",
+    "companies": ["Google", "Amazon"],
+    "topic": "Graphs",
+    "pattern": "Multi-source BFS / DFS",
+    "difficulty": "Medium",
+    "prompt": "Given an m x n matrix of elevations, find all grid coordinates where rainwater can flow to both the Pacific and Atlantic oceans.",
+    "keywords": ["graph", "bfs", "dfs", "grid", "reachability"]
+  },
+  {
+    "id": "redundant_connection",
+    "title": "Redundant Connection",
+    "companies": ["Google", "Meta", "Amazon"],
+    "topic": "Graphs",
+    "pattern": "Disjoint Set Union (DSU)",
+    "difficulty": "Medium",
+    "prompt": "Given an undirected graph of n nodes with n edges that contains a cycle, return an edge that can be removed so that the resulting graph is a tree.",
+    "keywords": ["graph", "union find", "dsu", "cycle detection"]
+  },
+  {
+    "id": "climbing_stairs",
+    "title": "Climbing Stairs",
+    "companies": ["Amazon", "Google", "Apple"],
+    "topic": "Dynamic Programming",
+    "pattern": "1D DP (Fibonacci)",
+    "difficulty": "Easy",
+    "prompt": "You are climbing a staircase with n steps. Each step you can take either 1 or 2 steps. How many distinct ways can you reach the top?",
+    "keywords": ["dynamic programming", "fibonacci", "memoization", "counting"]
+  },
+  {
+    "id": "house_robber",
+    "title": "House Robber",
+    "companies": ["Amazon", "Google", "Microsoft"],
+    "topic": "Dynamic Programming",
+    "pattern": "1D DP (State Transition)",
+    "difficulty": "Medium",
+    "prompt": "You plan to rob houses along a street without triggering adjacent alarms. Find the maximum amount of money you can rob.",
+    "keywords": ["dynamic programming", "optimization", "state transition", "memoization"]
+  },
+  {
+    "id": "unique_paths",
+    "title": "Unique Paths",
+    "companies": ["Google", "Meta", "Amazon"],
+    "topic": "Dynamic Programming",
+    "pattern": "2D Grid DP",
+    "difficulty": "Medium",
+    "prompt": "A robot at the top-left of an m x n grid can only move right or down. Find the number of unique paths to reach the bottom-right corner.",
+    "keywords": ["dynamic programming", "grid", "combinatorics", "counting"]
+  },
+  {
+    "id": "edit_distance",
+    "title": "Edit Distance",
+    "companies": ["Google", "Amazon", "Microsoft"],
+    "topic": "Dynamic Programming",
+    "pattern": "2D String DP",
+    "difficulty": "Hard",
+    "prompt": "Given strings word1 and word2, return the minimum operations (insert, delete, replace) required to convert word1 to word2.",
+    "keywords": ["dynamic programming", "string", "levenshtein", "matrix"]
+  },
+  {
+    "id": "design_key_value_store",
+    "title": "Design a Distributed Key-Value Store",
+    "companies": ["Amazon", "Netflix", "Google"],
+    "topic": "System Design",
+    "pattern": "Consistent Hashing + Replication",
+    "difficulty": "Medium",
+    "prompt": "Design a distributed, highly available key-value store with configurable TTL, quorum read/write consistency, and partition tolerance.",
+    "keywords": ["system design", "key value", "consistent hashing", "replication", "quorum"]
   }
 ]
