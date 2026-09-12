@@ -5,7 +5,9 @@
 
 !/README.md
 !/rag.json
-!/index.html
+
+# Ignore legacy prototype
+index.html
 
 !/package.json
 !/package-lock.json
@@ -28,3 +30,8 @@
 !/scripts/**
 !/public/
 !/public/**
+
+# Dependencies & build outputs
+.next/
+node_modules/
+.env*.local
