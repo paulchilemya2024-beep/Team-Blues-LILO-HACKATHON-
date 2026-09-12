@@ -349,6 +349,14 @@
     font-size: 13px;
     margin-bottom: 18px;
   }
+
+  .index-status {
+    color: var(--text-muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    line-height: 1.4;
+    min-height: 30px;
+  }
 </style>
 
 <div class="app">
@@ -369,6 +377,7 @@
     </div>
 
     <button class="primary" id="startBtn">Start walkthrough</button>
+    <div class="index-status" id="indexStatus">Preparing local knowledge index...</div>
 
     <div class="stepper" id="stepper"></div>
   </div>
@@ -415,10 +424,104 @@
   const mainEl = document.getElementById('main');
   const startBtn = document.getElementById('startBtn');
   const problemInput = document.getElementById('problemInput');
+  const indexStatus = document.getElementById('indexStatus');
+
+  const VECTOR_DB_NAME = 'interview-code-vectors';
+  const VECTOR_STORE = 'documents';
+  const EMBEDDING_MODEL = 'Xenova/all-MiniLM-L6-v2';
+  let vectorIndexPromise = null;
+  let embeddingPipelinePromise = null;
 
   let hintsRevealed = 0;
   let sessionData = null;
   let qaThread = [];
+
+  function openVectorDb() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(VECTOR_DB_NAME, 1);
+      request.onupgradeneeded = () => request.result.createObjectStore(VECTOR_STORE, { keyPath: 'id' });
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  function readVectors(db) {
+    return new Promise((resolve, reject) => {
+      const request = db.transaction(VECTOR_STORE, 'readonly').objectStore(VECTOR_STORE).getAll();
+      request.onsuccess = () => resolve(request.result);
+      request.onerror = () => reject(request.error);
+    });
+  }
+
+  function writeVectors(db, documents) {
+    return new Promise((resolve, reject) => {
+      const transaction = db.transaction(VECTOR_STORE, 'readwrite');
+      const store = transaction.objectStore(VECTOR_STORE);
+      store.clear();
+      documents.forEach(document => store.put(document));
+      transaction.oncomplete = resolve;
+      transaction.onerror = () => reject(transaction.error);
+    });
+  }
+
+  async function getEmbeddingPipeline() {
+    if (!embeddingPipelinePromise) {
+      embeddingPipelinePromise = import('https://cdn.jsdelivr.net/npm/@xenova/transformers@2.17.2')
+        .then(transformers => transformers.pipeline('feature-extraction', EMBEDDING_MODEL, { quantized: true }));
+    }
+    return embeddingPipelinePromise;
+  }
+
+  async function embedText(encoder, text) {
+    const output = await encoder(text, { pooling: 'mean', normalize: true });
+    return Array.from(output.data);
+  }
+
+  async function buildVectorIndex() {
+    const db = await openVectorDb();
+    const knowledgeBase = await fetch('rag.json').then(response => {
+      if (!response.ok) throw new Error('Could not load rag.json');
+      return response.json();
+    });
+    const existing = await readVectors(db);
+    const hasCurrentDocuments = existing.length === knowledgeBase.length && knowledgeBase.every(item => existing.some(document => document.id === item.id));
+    if (hasCurrentDocuments) return existing;
+
+    indexStatus.textContent = 'Building local vector index (one-time)...';
+    const encoder = await getEmbeddingPipeline();
+    const documents = [];
+    for (const item of knowledgeBase) {
+      const text = [item.title, item.topic, item.pattern, item.prompt, ...(item.keywords || [])].join('. ');
+      documents.push({ id: item.id, text, item, vector: await embedText(encoder, text) });
+    }
+    await writeVectors(db, documents);
+    return documents;
+  }
+
+  async function getVectorIndex() {
+    if (!vectorIndexPromise) vectorIndexPromise = buildVectorIndex();
+    return vectorIndexPromise;
+  }
+
+  function cosineSimilarity(left, right) {
+    let score = 0;
+    for (let i = 0; i < left.length; i++) score += left[i] * right[i];
+    return score;
+  }
+
+  async function retrieveKnowledge(problem, limit = 3) {
+    const documents = await getVectorIndex();
+    const encoder = await getEmbeddingPipeline();
+    const queryVector = await embedText(encoder, problem);
+    return documents
+      .map(document => ({ ...document, score: cosineSimilarity(queryVector, document.vector) }))
+      .sort((a, b) => b.score - a.score)
+      .slice(0, limit);
+  }
+
+  getVectorIndex()
+    .then(documents => { indexStatus.textContent = `Local vector index ready · ${documents.length} problems`; })
+    .catch(error => { indexStatus.textContent = 'Knowledge index unavailable; continuing without it.'; console.warn(error); });
 
   function esc(s) {
     return (s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -603,7 +706,13 @@ Keep every field concise. The socratic_hints must NOT reveal the answer outright
     renderStepper(0);
     renderLoading('Reading the problem and mapping out an approach...');
     try {
-      const raw = await callClaude([{ role: 'user', content: problem }], ANALYSIS_SYSTEM);
+      const matches = await retrieveKnowledge(problem);
+      const context = matches.map(match => {
+        const item = match.item;
+        return `- ${item.title} (${item.topic}; ${item.pattern}): ${item.prompt}`;
+      }).join('\n');
+      const retrievalPrompt = `${ANALYSIS_SYSTEM}\n\nUse these semantically related problems from the local knowledge base as reference when relevant. Do not mention the knowledge base or copy its answer blindly:\n${context}`;
+      const raw = await callClaude([{ role: 'user', content: problem }], retrievalPrompt);
       const parsed = extractJson(raw);
       parsed.__showApproach = false;
       sessionData = parsed;

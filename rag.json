@@ -1,0 +1,352 @@
+[
+  {
+    "id": "two_sum",
+    "title": "Two Sum",
+    "companies": ["Google", "Amazon", "Meta", "Microsoft"],
+    "topic": "Arrays & Hashing",
+    "pattern": "Hash Map",
+    "difficulty": "Easy",
+    "prompt": "Given an array of integers and a target value, return the indices of the two numbers that add up to the target. Assume exactly one valid pair exists.",
+    "keywords": ["array", "hash map", "pair", "complement", "target sum"]
+  },
+  {
+    "id": "longest_substr_no_repeat",
+    "title": "Longest Substring Without Repeating Characters",
+    "companies": ["Amazon", "Meta", "Bloomberg"],
+    "topic": "Strings",
+    "pattern": "Sliding Window",
+    "difficulty": "Medium",
+    "prompt": "Given a string, find the length of the longest contiguous substring that contains no repeated characters.",
+    "keywords": ["string", "sliding window", "substring", "unique characters"]
+  },
+  {
+    "id": "merge_intervals",
+    "title": "Merge Overlapping Intervals",
+    "companies": ["Google", "Microsoft", "Uber"],
+    "topic": "Intervals",
+    "pattern": "Sort + Sweep",
+    "difficulty": "Medium",
+    "prompt": "Given a list of intervals, merge all overlapping intervals and return the resulting non-overlapping set, sorted by start time.",
+    "keywords": ["intervals", "sorting", "overlap", "scheduling"]
+  },
+  {
+    "id": "lru_cache",
+    "title": "Design an LRU Cache",
+    "companies": ["Amazon", "Google", "Microsoft", "Uber"],
+    "topic": "Design",
+    "pattern": "Hash Map + Doubly Linked List",
+    "difficulty": "Medium",
+    "prompt": "Design a data structure that supports get and put operations in O(1) time, evicting the least recently used item when it exceeds a fixed capacity.",
+    "keywords": ["cache", "linked list", "hash map", "eviction", "design"]
+  },
+  {
+    "id": "number_of_islands",
+    "title": "Number of Islands",
+    "companies": ["Google", "Meta", "Amazon"],
+    "topic": "Graphs",
+    "pattern": "BFS / DFS on Grid",
+    "difficulty": "Medium",
+    "prompt": "Given a 2D grid of '1's (land) and '0's (water), count the number of distinct islands, where an island is a group of connected land cells (horizontally or vertically).",
+    "keywords": ["grid", "graph", "bfs", "dfs", "connected components"]
+  },
+  {
+    "id": "course_schedule",
+    "title": "Course Schedule",
+    "companies": ["Google", "Meta"],
+    "topic": "Graphs",
+    "pattern": "Topological Sort",
+    "difficulty": "Medium",
+    "prompt": "Given a number of courses and a list of prerequisite pairs, determine whether it's possible to finish all courses given the prerequisite constraints.",
+    "keywords": ["graph", "cycle detection", "topological sort", "dependencies"]
+  },
+  {
+    "id": "word_break",
+    "title": "Word Break",
+    "companies": ["Amazon", "Bloomberg"],
+    "topic": "Dynamic Programming",
+    "pattern": "1D DP",
+    "difficulty": "Medium",
+    "prompt": "Given a string and a dictionary of words, determine whether the string can be segmented into a sequence of one or more dictionary words.",
+    "keywords": ["dynamic programming", "string", "segmentation", "dictionary"]
+  },
+  {
+    "id": "median_two_sorted_arrays",
+    "title": "Median of Two Sorted Arrays",
+    "companies": ["Google", "Apple"],
+    "topic": "Binary Search",
+    "pattern": "Partition Search",
+    "difficulty": "Hard",
+    "prompt": "Given two sorted arrays of possibly different sizes, find the median of the combined data set in better than O(n) time.",
+    "keywords": ["binary search", "arrays", "median", "partition"]
+  },
+  {
+    "id": "serialize_binary_tree",
+    "title": "Serialize and Deserialize a Binary Tree",
+    "companies": ["Amazon", "Microsoft"],
+    "topic": "Trees",
+    "pattern": "DFS / BFS Encoding",
+    "difficulty": "Hard",
+    "prompt": "Design an algorithm to convert a binary tree into a string representation and reconstruct the original tree from that string.",
+    "keywords": ["tree", "serialization", "encoding", "traversal"]
+  },
+  {
+    "id": "trapping_rain_water",
+    "title": "Trapping Rain Water",
+    "companies": ["Google", "Amazon", "Apple"],
+    "topic": "Arrays",
+    "pattern": "Two Pointers",
+    "difficulty": "Hard",
+    "prompt": "Given an array representing elevation heights, compute how much rainwater the terrain can trap between the bars after raining.",
+    "keywords": ["array", "two pointers", "elevation", "water trapping"]
+  },
+  {
+    "id": "top_k_frequent",
+    "title": "Top K Frequent Elements",
+    "companies": ["Meta", "Amazon"],
+    "topic": "Heaps",
+    "pattern": "Heap / Bucket Sort",
+    "difficulty": "Medium",
+    "prompt": "Given an array of integers, return the k most frequently occurring elements.",
+    "keywords": ["heap", "frequency", "bucket sort", "top k"]
+  },
+  {
+    "id": "meeting_rooms_ii",
+    "title": "Minimum Meeting Rooms",
+    "companies": ["Google", "Uber", "Bloomberg"],
+    "topic": "Intervals",
+    "pattern": "Heap / Sweep Line",
+    "difficulty": "Medium",
+    "prompt": "Given a list of meeting time intervals, find the minimum number of conference rooms required to hold all the meetings without overlap.",
+    "keywords": ["intervals", "heap", "scheduling", "sweep line"]
+  },
+  {
+    "id": "group_anagrams",
+    "title": "Group Anagrams",
+    "companies": ["Amazon", "Meta", "Microsoft"],
+    "topic": "Arrays & Hashing",
+    "pattern": "Hash Map with Sorted Key",
+    "difficulty": "Medium",
+    "prompt": "Given an array of strings, group the strings that are anagrams of one another into separate lists.",
+    "keywords": ["hash map", "string", "anagram", "grouping"]
+  },
+  {
+    "id": "product_except_self",
+    "title": "Product of Array Except Self",
+    "companies": ["Amazon", "Apple", "Microsoft"],
+    "topic": "Arrays",
+    "pattern": "Prefix / Suffix Products",
+    "difficulty": "Medium",
+    "prompt": "Given an array, return a new array where each element is the product of all other elements, without using division and in O(n) time.",
+    "keywords": ["array", "prefix product", "suffix product"]
+  },
+  {
+    "id": "design_rate_limiter",
+    "title": "Design a Rate Limiter",
+    "companies": ["Uber", "Amazon", "Google"],
+    "topic": "System Design",
+    "pattern": "Sliding Window Counter",
+    "difficulty": "Medium",
+    "prompt": "Design a system that limits the number of requests a client can make within a rolling time window, discussing the trade-offs between fixed windows, sliding windows, and token buckets.",
+    "keywords": ["system design", "rate limiting", "sliding window", "token bucket"]
+  },
+  {
+    "id": "copy_list_random_pointer",
+    "title": "Copy a Linked List with a Random Pointer",
+    "companies": ["Amazon", "Microsoft"],
+    "topic": "Linked Lists",
+    "pattern": "Hash Map / Interleaving",
+    "difficulty": "Medium",
+    "prompt": "Given a linked list where each node has an extra pointer that can point to any node or null, create a deep copy of the list.",
+    "keywords": ["linked list", "deep copy", "hash map", "random pointer"]
+  },
+  {
+    "id": "min_window_substring",
+    "title": "Minimum Window Substring",
+    "companies": ["Meta", "Google"],
+    "topic": "Strings",
+    "pattern": "Sliding Window",
+    "difficulty": "Hard",
+    "prompt": "Given two strings s and t, find the smallest substring of s that contains every character of t, including duplicates.",
+    "keywords": ["sliding window", "string", "substring", "character count"]
+  },
+  {
+    "id": "sliding_window_max",
+    "title": "Sliding Window Maximum",
+    "companies": ["Google", "Amazon"],
+    "topic": "Arrays",
+    "pattern": "Monotonic Deque",
+    "difficulty": "Hard",
+    "prompt": "Given an array and a window size k, return the maximum value in each sliding window as it moves across the array.",
+    "keywords": ["deque", "sliding window", "array", "monotonic"]
+  },
+  {
+    "id": "validate_bst",
+    "title": "Validate a Binary Search Tree",
+    "companies": ["Microsoft", "Meta"],
+    "topic": "Trees",
+    "pattern": "Bounded Recursion",
+    "difficulty": "Medium",
+    "prompt": "Given the root of a binary tree, determine whether it is a valid binary search tree.",
+    "keywords": ["tree", "bst", "recursion", "validation"]
+  },
+  {
+    "id": "kth_smallest_bst",
+    "title": "Kth Smallest Element in a BST",
+    "companies": ["Google", "Microsoft"],
+    "topic": "Trees",
+    "pattern": "In-order Traversal",
+    "difficulty": "Medium",
+    "prompt": "Given the root of a binary search tree, find the kth smallest value it contains.",
+    "keywords": ["tree", "bst", "in-order traversal", "kth element"]
+  },
+  {
+    "id": "clone_graph",
+    "title": "Clone a Graph",
+    "companies": ["Amazon", "Meta"],
+    "topic": "Graphs",
+    "pattern": "BFS / DFS with Hash Map",
+    "difficulty": "Medium",
+    "prompt": "Given a reference node in a connected undirected graph, return a deep copy of the entire graph.",
+    "keywords": ["graph", "deep copy", "bfs", "dfs", "hash map"]
+  },
+  {
+    "id": "coin_change",
+    "title": "Coin Change",
+    "companies": ["Amazon", "Bloomberg", "Google"],
+    "topic": "Dynamic Programming",
+    "pattern": "1D DP (Unbounded Knapsack)",
+    "difficulty": "Medium",
+    "prompt": "Given a set of coin denominations and a target amount, find the fewest number of coins needed to make that amount, or report it's impossible.",
+    "keywords": ["dynamic programming", "knapsack", "coins", "minimum count"]
+  },
+  {
+    "id": "longest_increasing_subsequence",
+    "title": "Longest Increasing Subsequence",
+    "companies": ["Microsoft", "Google"],
+    "topic": "Dynamic Programming",
+    "pattern": "1D DP / Binary Search",
+    "difficulty": "Medium",
+    "prompt": "Given an array of integers, find the length of the longest strictly increasing subsequence.",
+    "keywords": ["dynamic programming", "binary search", "subsequence"]
+  },
+  {
+    "id": "word_ladder",
+    "title": "Word Ladder",
+    "companies": ["Amazon", "Meta"],
+    "topic": "Graphs",
+    "pattern": "BFS Shortest Path",
+    "difficulty": "Hard",
+    "prompt": "Given a start word, an end word, and a word list, find the length of the shortest transformation sequence where each step changes exactly one letter and each intermediate word is valid.",
+    "keywords": ["bfs", "graph", "shortest path", "word transformation"]
+  },
+  {
+    "id": "alien_dictionary",
+    "title": "Alien Dictionary",
+    "companies": ["Google", "Airbnb"],
+    "topic": "Graphs",
+    "pattern": "Topological Sort",
+    "difficulty": "Hard",
+    "prompt": "Given a list of words sorted according to the rules of an unknown alien alphabet, derive a valid ordering of the letters.",
+    "keywords": ["topological sort", "graph", "ordering", "alphabet"]
+  },
+  {
+    "id": "design_parking_lot",
+    "title": "Design a Parking Lot System",
+    "companies": ["Amazon", "Microsoft", "Apple"],
+    "topic": "Object-Oriented Design",
+    "pattern": "Class Hierarchy Design",
+    "difficulty": "Medium",
+    "prompt": "Design the classes and interfaces for a multi-level parking lot system that supports different vehicle sizes, spot allocation, and fee calculation.",
+    "keywords": ["oop", "design", "class hierarchy", "system modeling"]
+  },
+  {
+    "id": "url_shortener",
+    "title": "Design a URL Shortening Service",
+    "companies": ["Google", "Amazon", "Uber"],
+    "topic": "System Design",
+    "pattern": "Hashing + Key-Value Store",
+    "difficulty": "Medium",
+    "prompt": "Design a service like a URL shortener, discussing how you'd generate short codes, handle collisions, and scale reads versus writes.",
+    "keywords": ["system design", "hashing", "key-value store", "scalability"]
+  },
+  {
+    "id": "rotting_oranges",
+    "title": "Rotting Oranges",
+    "companies": ["Amazon", "Meta"],
+    "topic": "Graphs",
+    "pattern": "Multi-source BFS",
+    "difficulty": "Medium",
+    "prompt": "Given a grid where cells contain fresh oranges, rotten oranges, or are empty, find the minimum time for all fresh oranges to rot, given that rot spreads to adjacent cells each minute.",
+    "keywords": ["bfs", "grid", "multi-source", "simulation"]
+  },
+  {
+    "id": "task_scheduler",
+    "title": "Task Scheduler",
+    "companies": ["Meta", "Amazon"],
+    "topic": "Greedy",
+    "pattern": "Heap / Math",
+    "difficulty": "Medium",
+    "prompt": "Given a list of tasks and a cooldown period between identical tasks, find the minimum number of time units needed to complete all tasks.",
+    "keywords": ["greedy", "heap", "scheduling", "cooldown"]
+  },
+  {
+    "id": "find_median_stream",
+    "title": "Find Median from a Data Stream",
+    "companies": ["Google", "Apple"],
+    "topic": "Heaps",
+    "pattern": "Two Heaps",
+    "difficulty": "Hard",
+    "prompt": "Design a data structure that supports adding numbers one at a time and efficiently returning the median of all numbers seen so far.",
+    "keywords": ["heap", "median", "streaming", "design"]
+  },
+  {
+    "id": "k_closest_points",
+    "title": "K Closest Points to the Origin",
+    "companies": ["Amazon", "Microsoft"],
+    "topic": "Heaps",
+    "pattern": "Heap / Quickselect",
+    "difficulty": "Medium",
+    "prompt": "Given a list of points on a 2D plane, return the k points closest to the origin.",
+    "keywords": ["heap", "quickselect", "distance", "geometry"]
+  },
+  {
+    "id": "subarray_sum_equals_k",
+    "title": "Subarray Sum Equals K",
+    "companies": ["Meta", "Google"],
+    "topic": "Arrays & Hashing",
+    "pattern": "Prefix Sum + Hash Map",
+    "difficulty": "Medium",
+    "prompt": "Given an array of integers and a target k, find the total number of contiguous subarrays whose sum equals k.",
+    "keywords": ["prefix sum", "hash map", "subarray", "array"]
+  },
+  {
+    "id": "design_twitter_feed",
+    "title": "Design a Simplified News Feed",
+    "companies": ["Meta", "LinkedIn"],
+    "topic": "System Design",
+    "pattern": "Heap Merge / Fan-out",
+    "difficulty": "Hard",
+    "prompt": "Design a simplified social feed feature where users can post and follow others, and retrieve the most recent posts from people they follow, efficiently.",
+    "keywords": ["system design", "feed", "heap merge", "fan-out"]
+  },
+  {
+    "id": "employee_free_time",
+    "title": "Employee Free Time",
+    "companies": ["Google", "Amazon"],
+    "topic": "Intervals",
+    "pattern": "Merge + Gap Finding",
+    "difficulty": "Hard",
+    "prompt": "Given each employee's schedule as a list of non-overlapping intervals, find the common free time slots shared by everyone across the whole company.",
+    "keywords": ["intervals", "merging", "scheduling", "gaps"]
+  },
+  {
+    "id": "reorganize_string",
+    "title": "Reorganize String",
+    "companies": ["Amazon", "Bloomberg"],
+    "topic": "Greedy",
+    "pattern": "Heap",
+    "difficulty": "Medium",
+    "prompt": "Given a string, rearrange its characters so that no two adjacent characters are the same, or determine that it's not possible.",
+    "keywords": ["greedy", "heap", "string", "rearrangement"]
+  }
+]
