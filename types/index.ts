@@ -58,6 +58,13 @@ export interface QAPair {
   timestamp: string;
 }
 
+export interface HypothesisResult {
+  hypothesis: string;
+  verdict: string;
+  feedback: string;
+  evaluatedAt: string;
+}
+
 export interface SessionState {
   sessionId: string;
   problemId: string;
@@ -65,6 +72,7 @@ export interface SessionState {
   hintsRevealed: number;
   userNotes: string;
   qaThread: QAPair[];
+  hypothesis?: HypothesisResult;
   isCompleted: boolean;
   lastUpdated: string;
 }

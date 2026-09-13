@@ -58,6 +58,15 @@ export default function SummaryPage() {
       '',
       '## My Notes',
       session?.userNotes?.trim() ? session.userNotes : '_No notes captured._',
+      '',
+      ...(session?.hypothesis
+        ? [
+            '## Initial Hypothesis',
+            `Hypothesis: "${session.hypothesis.hypothesis}"`,
+            `Verdict: [${session.hypothesis.verdict}]`,
+            `Mentor Feedback: ${session.hypothesis.feedback}`,
+          ]
+        : []),
     ]
       .filter(Boolean)
       .join('\n');
@@ -129,6 +138,25 @@ export default function SummaryPage() {
               {walkthrough.approach.why_this_works}
             </p>
           </div>
+          {session?.hypothesis && (
+            <div className="mt-4 border-t border-[#e2ddce] pt-3">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-mono text-[11px] text-[#7c776c]">
+                  YOUR INITIAL HYPOTHESIS
+                </p>
+                <span className="font-mono text-[11px] font-semibold px-2 py-0.5 border border-[#2a303c] rounded-sm bg-[#12151c] text-[#38bdf8]">
+                  [{session.hypothesis.verdict}]
+                </span>
+              </div>
+              <p className="font-mono text-xs text-[#201f1a] bg-[#ebe6d8] border border-[#dcd6c5] p-2.5 rounded-sm mt-1.5 leading-relaxed">
+                &ldquo;{session.hypothesis.hypothesis}&rdquo;
+              </p>
+              <p className="text-[#55524a] text-xs leading-relaxed mt-1.5">
+                <strong className="text-[#201f1a]">Mentor Critique:</strong>{' '}
+                {session.hypothesis.feedback}
+              </p>
+            </div>
+          )}
           {session?.userNotes?.trim() && (
             <div className="mt-4 border-t border-[#e2ddce] pt-3">
               <p className="font-mono text-[11px] text-[#7c776c]">

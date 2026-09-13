@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import PaperCard from '@/components/PaperCard';
 import Stepper from '@/components/Stepper';
 import HintLadder from '@/components/HintLadder';
+import HypothesisLab from '@/components/HypothesisLab';
 import ApproachCard from '@/components/ApproachCard';
 import ComplexityBadges from '@/components/ComplexityBadges';
 import TradeoffTable from '@/components/TradeoffTable';
@@ -207,11 +208,23 @@ export default function SolvePage() {
             />
           </div>
 
-          <div data-step="1">
+          <div data-step="1" className="space-y-4">
             <HintLadder
               hints={walkthrough.socratic_hints}
               revealedCount={session.hintsRevealed}
               onReveal={revealHint}
+            />
+            <HypothesisLab
+              problemTitle={walkthrough.title}
+              pattern={problem.pattern}
+              expectedApproach={walkthrough.approach.name}
+              initialResult={session.hypothesis}
+              onSaveHypothesis={(hypo) =>
+                setSession((s) => ({ ...s, hypothesis: hypo }))
+              }
+              onUnlockApproach={() =>
+                setSession((s) => ({ ...s, currentStep: 2 }))
+              }
             />
           </div>
 

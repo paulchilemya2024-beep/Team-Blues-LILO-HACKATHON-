@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import PaperCard from '@/components/PaperCard';
 import Stepper from '@/components/Stepper';
 import HintLadder from '@/components/HintLadder';
+import HypothesisLab from '@/components/HypothesisLab';
 import ApproachCard from '@/components/ApproachCard';
 import ComplexityBadges from '@/components/ComplexityBadges';
 import TradeoffTable from '@/components/TradeoffTable';
@@ -14,7 +15,7 @@ import TutorChat from '@/components/TutorChat';
 import UserNotepad from '@/components/UserNotepad';
 import { getWalkthrough } from '@/lib/mockSolutions';
 import { askTutor, buildQAPair } from '@/lib/ai';
-import type { QAPair } from '@/types';
+import type { QAPair, HypothesisResult } from '@/types';
 
 const STEPS = [
   'Understand Problem',
@@ -32,6 +33,7 @@ export default function CustomSolvePage() {
   const [hintsRevealed, setHintsRevealed] = useState(0);
   const [notes, setNotes] = useState('');
   const [thread, setThread] = useState<QAPair[]>([]);
+  const [hypothesis, setHypothesis] = useState<HypothesisResult | null>(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -113,7 +115,7 @@ export default function CustomSolvePage() {
             />
           </div>
 
-          <div data-step="1">
+          <div data-step="1" className="space-y-4">
             <HintLadder
               hints={walkthrough.socratic_hints}
               revealedCount={hintsRevealed}
@@ -122,6 +124,14 @@ export default function CustomSolvePage() {
                   Math.min(r + 1, walkthrough.socratic_hints.length)
                 )
               }
+            />
+            <HypothesisLab
+              problemTitle={customTitle}
+              pattern="Guided Reasoning"
+              expectedApproach={walkthrough.approach.name}
+              initialResult={hypothesis || undefined}
+              onSaveHypothesis={setHypothesis}
+              onUnlockApproach={() => setCurrentStep(2)}
             />
           </div>
 
